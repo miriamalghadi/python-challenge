@@ -28,3 +28,14 @@ for numbers in range(number_files):
             CVotePercent.append(Candidate.count(x)/TotalCount)
         
         Winner = CandidateUnique[CVoteCount.index(max(CVoteCount))]
+
+    with open('Election_Results_' + str(numbers+1) + '.txt', 'w') as text:
+        text.write("Election Results for file 'election_data_"+str(numbers+1) + ".csv'"+"\n")
+        text.write("----------------------------------------------------------\n")
+        text.write("Total Vote: " + str(TotalCount) + "\n")
+        text.write("----------------------------------------------------------\n")
+        for i in range(len(set(Candidate))):
+            text.write(CandidateUnique[i] + ": " + str(round(CVotePercent[i]*100,1)) +"% (" + str(CVoteCount[i]) + ")\n")
+        text.write("----------------------------------------------------------\n")
+        text.write("Winner: " + Winner +"\n")
+        text.write("----------------------------------------------------------\n")
