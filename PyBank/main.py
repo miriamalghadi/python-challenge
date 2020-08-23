@@ -34,4 +34,9 @@ for numbers in range(number_files):
             year.append(splitdate[1][-2:])
             revbeg = revend
 
-            
+    avrevchg = totalrevchange / itemcount
+    g_increase = max(revenuechange)
+    g_decrease = min(revenuechange)
+    increasedate = date[revenuechange.index(g_increase)]
+    decreasedate = date[revenuechange.index(g_decrease)]
+    
