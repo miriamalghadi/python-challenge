@@ -39,4 +39,14 @@ for numbers in range(number_files):
     g_decrease = min(revenuechange)
     increasedate = date[revenuechange.index(g_increase)]
     decreasedate = date[revenuechange.index(g_decrease)]
-    
+    count_m = len(set(date))
+
+    with open('financial_analysis_report_' + str(numbers + 1) + '.txt, "w') as text:
+        text.write("Financial Analysis for file 'budget_data_"+ str(numbers+1) + ".csv'"+"\n")
+        text.write("----------------------------------------------------------\n")
+        text.write("    Total Months: " + str(CountM) + "\n")
+        text.write("    Total Revenue: " + "$" + str(TotalRev) +"\n")
+        text.write("    Average Revenue Change: " + '$' + str(int(AveRevChg)) +'\n')
+        text.write("    Greatest Increase in Revenue: " + str(IncreaseDate) + " ($" + str(GIncrease) + ")\n")
+        text.write("    Greatest Decrease in Revenue: " + str(DecreaseDate) + " ($" + str(GDecrease) + ")\n\n")
+        #finally
